@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Activity 4 - WebApp Deployment</title>
+</head>
+<body>
+    <h1>Eligibility for Credit Card</h1>
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="age" placeholder="Age" required="required" /><br>
+        <input type="text" name="exp" placeholder="Experience" required="required" /><br>
+        <input type="text" name="income" placeholder="Income" required="required" /><br>
+        <input type="text" name="family" placeholder="Family" required="required" /><br>
+        <label for="cd">CD Account</label>
+        <input type="checkbox" name="cd" id="cd"/><br>
+        <label for="online">Online</label>
+        <input type="checkbox" name="online" id="online" placeholder="Online"/><br>
+        <br><br>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Check Eligibility</button>
+    </form>
+
+   <br>
+   <h4 style="color:Red;">
+   {{ prediction_output }} </h4>
+</body>
+</html>
